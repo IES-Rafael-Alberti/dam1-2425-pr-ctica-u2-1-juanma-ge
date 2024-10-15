@@ -13,6 +13,14 @@ def comprobar_importe(valor: str) -> bool:
     Returns:
         bool: True si el valor es un número válido (positivo, negativo o con punto decimal), False en caso contrario.
     """
+    importe = input("Dime el importe: ")
+    if importe is int:
+        return True
+    if importe is float:
+        return True
+    if importe is None or not comprobar_importe():
+            mostrar_mensaje_error()
+            return False    
 
 
 def comprobar_comando(comando: str) -> bool:
@@ -25,13 +33,28 @@ def comprobar_comando(comando: str) -> bool:
     Returns:
         bool: True si el comando está en la lista de comandos válidos, False en caso contrario.
     """
+    comando = input("Di el comando que quieras ejecutar: ")
+    if comando is "saldo":
+        return True
+    if comando is "fin":
+        return True
+    if comando is "reset":
+        return True
+    if comando is "compra [float]": 
+        return True
+    if comando is "venta [float]":
+        return True
+    else:
+        return False
+
 
 
 def mostrar_mensaje_error():
     """
     Muestra el mensaje de error por entrada inválida.
     """
-
+    if comprobar_comando is False:
+        
 
 def procesar_compra(saldo: float, importe: float) -> float:
     """
