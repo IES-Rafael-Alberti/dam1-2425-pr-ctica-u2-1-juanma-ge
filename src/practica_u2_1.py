@@ -40,9 +40,9 @@ def comprobar_comando(comando: str) -> bool:
         return True
     if comando is "reset":
         return True
-    if comando is "compra [float]": 
+    if comando is "compra ["float"]": 
         return True
-    if comando is "venta [float]":
+    if comando is "venta ["float"]":
         return True
     else:
         return False
@@ -54,7 +54,8 @@ def mostrar_mensaje_error():
     Muestra el mensaje de error por entrada inválida.
     """
     if comprobar_comando is False:
-        
+        print("**ERROR** entrada inválida")
+
 
 def procesar_compra(saldo: float, importe: float) -> float:
     """
@@ -67,6 +68,11 @@ def procesar_compra(saldo: float, importe: float) -> float:
     Returns:
         float: El saldo actualizado después de realizar la compra.
     """
+    if comprobar_comando is "compra ["float"]":
+        compra = float
+        saldo = saldo - compra
+
+
 
 
 def procesar_venta(saldo: float, importe: float) -> float:
@@ -80,7 +86,9 @@ def procesar_venta(saldo: float, importe: float) -> float:
     Returns:
         float: El saldo actualizado después de realizar la venta.
     """
-
+    if comprobar_comando is "venta ["float"]":
+        venta = float
+        saldo = saldo + venta
 
 def mostrar_saldo(saldo: float, cont_compras: int, cont_ventas: int):
     """
@@ -91,7 +99,7 @@ def mostrar_saldo(saldo: float, cont_compras: int, cont_ventas: int):
         cont_compras (int): Número total de compras realizadas.
         cont_ventas (int): Número total de ventas realizadas.
     """
-
+    
 
 def resetear_saldo(saldo: float, cont_compras: int, cont_ventas: int) -> tuple[float, int, int]:
     """
