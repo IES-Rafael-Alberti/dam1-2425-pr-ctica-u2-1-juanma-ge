@@ -13,6 +13,14 @@ def comprobar_importe(valor: str) -> bool:
     Returns:
         bool: True si el valor es un número válido (positivo, negativo o con punto decimal), False en caso contrario.
     """
+    importe = input("Dime el importe: ")
+    if importe is int:
+        return True
+    if importe is float:
+        return True
+    if importe is None or not comprobar_importe():
+            mostrar_mensaje_error()
+            return False    
 
 
 def comprobar_comando(comando: str) -> bool:
@@ -25,12 +33,28 @@ def comprobar_comando(comando: str) -> bool:
     Returns:
         bool: True si el comando está en la lista de comandos válidos, False en caso contrario.
     """
+    comando = input("Di el comando que quieras ejecutar: ")
+    if comando is "saldo":
+        return True
+    if comando is "fin":
+        return True
+    if comando is "reset":
+        return True
+    if comando is "compra ["float"]": 
+        return True
+    if comando is "venta ["float"]":
+        return True
+    else:
+        return False
+
 
 
 def mostrar_mensaje_error():
     """
     Muestra el mensaje de error por entrada inválida.
     """
+    if comprobar_comando is False:
+        print("**ERROR** entrada inválida")
 
 
 def procesar_compra(saldo: float, importe: float) -> float:
@@ -44,6 +68,11 @@ def procesar_compra(saldo: float, importe: float) -> float:
     Returns:
         float: El saldo actualizado después de realizar la compra.
     """
+    if comprobar_comando is "compra ["float"]":
+        compra = float
+        saldo = saldo - compra
+
+
 
 
 def procesar_venta(saldo: float, importe: float) -> float:
@@ -57,7 +86,9 @@ def procesar_venta(saldo: float, importe: float) -> float:
     Returns:
         float: El saldo actualizado después de realizar la venta.
     """
-
+    if comprobar_comando is "venta ["float"]":
+        venta = float
+        saldo = saldo + venta
 
 def mostrar_saldo(saldo: float, cont_compras: int, cont_ventas: int):
     """
@@ -68,7 +99,7 @@ def mostrar_saldo(saldo: float, cont_compras: int, cont_ventas: int):
         cont_compras (int): Número total de compras realizadas.
         cont_ventas (int): Número total de ventas realizadas.
     """
-
+    
 
 def resetear_saldo(saldo: float, cont_compras: int, cont_ventas: int) -> tuple[float, int, int]:
     """
