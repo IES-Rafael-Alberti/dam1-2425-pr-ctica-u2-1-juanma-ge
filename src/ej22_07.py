@@ -9,6 +9,5 @@ def tabla1():
 def main():
     tabla1()
 
-
 if __name__ == "__main__":
     main()

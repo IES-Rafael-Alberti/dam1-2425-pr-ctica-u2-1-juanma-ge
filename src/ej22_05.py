@@ -15,10 +15,10 @@ def calcular_capital(inversion, interes, años):
     return capital
 
 def main():
-    inversion = cantidad_a_invertir()
+    inversion = cantidad_a_invertir()   
     interes = interes_anual()
     años = num_años()
-    capital = calcular_capital(años, inversion, interes)
+    capital = calcular_capital(inversion, interes, años)
     print(capital)
     
 if __name__ == "__main__":
